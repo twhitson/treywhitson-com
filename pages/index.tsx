@@ -12,9 +12,9 @@ const IndexPage: React.FC = () => {
       </p>
       <p>
         With a true passion for creating amazing products and architecting
-        software solutions, I&amp;ve managed to start as a solo engineer and
+        software solutions, I&apos;ve managed to start as a solo engineer and
         build that into a team of 15. My skillset is wide and I learn quickly.
-        I&amp;m always willing to take on a new challenge!
+        I&apos;m always willing to take on a new challenge!
       </p>
     </main>
   );

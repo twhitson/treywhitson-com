@@ -2,11 +2,11 @@ import React, { PropsWithChildren } from "react";
 import Sidebar from "./Sidebar";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => (
-  <div className="flex flex-col lg:flex-row">
+  <>
     <Sidebar />
 
-    <div className="w-full py-4 px-8">{children}</div>
-  </div>
+    <div className="mt-16 py-4 px-8 lg:mt-0 lg:ml-96">{children}</div>
+  </>
 );
 
 export default Layout;

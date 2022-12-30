@@ -12,7 +12,7 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div
-      className={`${inter.variable} font-sans min-h-screen w-full bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50 overflow-x-hidden`}
+      className={`${inter.variable} min-h-screen w-full overflow-x-hidden bg-zinc-100 font-sans text-zinc-900 transition-colors duration-300 ease-in-out dark:bg-zinc-900 dark:text-zinc-50`}
     >
       <DefaultSeo
         defaultTitle="❤️ Trey Whitson"

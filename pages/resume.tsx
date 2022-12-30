@@ -13,10 +13,10 @@ type ResumePageProps = {
 const ResumePage: NextPage<ResumePageProps> = ({ data }) => {
   return (
     <>
-      <NextSeo title="Resume" />
+      <NextSeo title="Résumé" />
 
       <main>
-        <h1 className="mb-8 text-3xl font-bold">Resume</h1>
+        <h1 className="mb-8 text-3xl font-bold">Résumé</h1>
 
         {data.companies.map((company) => (
           <CompanyCard key={company.id} {...company} />

@@ -1,21 +1,28 @@
 import { gql } from "graphql-request";
 import { GetServerSideProps, NextPage } from "next";
-import Card from "../components/Card";
-import HygraphAPI from "../lib/hygraph";
+import { NextSeo } from "next-seo";
+import CompanyCard from "../components/CompanyCard";
+import HygraphAPI, { Company } from "../lib/hygraph";
 
 type ResumePageProps = {
-  data: any;
+  data: {
+    companies: Company[];
+  };
 };
 
 const ResumePage: NextPage<ResumePageProps> = ({ data }) => {
   return (
-    <main>
-      <h1 className="text-3xl font-bold underline">Resume</h1>
+    <>
+      <NextSeo title="Resume" />
 
-      <Card header="Card">Test</Card>
+      <main>
+        <h1 className="mb-8 text-3xl font-bold">Resume</h1>
 
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </main>
+        {data.companies.map((company) => (
+          <CompanyCard key={company.id} {...company} />
+        ))}
+      </main>
+    </>
   );
 };
 
@@ -25,8 +32,13 @@ export const getServerSideProps: GetServerSideProps<
   const data = await HygraphAPI(gql`
     {
       companies {
+        id
         companyName
+        logo {
+          url
+        }
         positions {
+          id
           name
           startDate
           endDate

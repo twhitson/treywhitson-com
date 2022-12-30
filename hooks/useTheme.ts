@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
 
-type ThemeOptions = "dark" | "light" | "system";
+type ThemeOptions = "dark" | "light";
 
-const useTheme = () => {
-  if (typeof window === "undefined")
-    return {
-      theme: "dark",
-      setTheme: () => {},
-    };
+type UseTheme = () => {
+  theme: ThemeOptions;
+  setTheme: (theme: ThemeOptions) => void;
+};
+
+const useTheme: UseTheme = () => {
+  const [currentTheme, setCurrentTheme] = useState<ThemeOptions>("dark");
 
   const setTheme = (theme: ThemeOptions) => {
-    if (theme !== "system") {
-      // Whenever the user explicitly chooses a mode
-      localStorage.theme = theme;
+    // Whenever the user explicitly chooses a mode
+    localStorage.theme = theme;
 
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
-      // Whenever the user explicitly chooses to respect the OS preference
-      localStorage.removeItem("theme");
+      document.documentElement.classList.remove("dark");
     }
+
+    setCurrentTheme(theme);
   };
 
   useEffect(() => {
@@ -32,10 +30,13 @@ const useTheme = () => {
         window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
       setTheme("dark");
+    } else {
+      setTheme("light");
     }
   }, []);
 
   return {
+    theme: currentTheme,
     setTheme,
   };
 };

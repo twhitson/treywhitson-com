@@ -36,7 +36,7 @@ const Sidebar: React.FC = () => {
       <aside
         id="sidebar"
         aria-hidden={!showSidebar}
-        className={`absolute top-0 z-10 h-full w-96 overflow-y-auto border-r border-zinc-200 bg-zinc-100 p-6 pt-24 transition-[margin] duration-300 ease-in-out dark:border-zinc-800 dark:bg-zinc-900 lg:fixed lg:left-0 lg:ml-0 lg:block lg:h-screen lg:min-h-screen lg:w-96 lg:pt-4 xl:w-80 ${
+        className={`max-w-96 absolute top-0 z-10 h-full overflow-y-auto border-r border-zinc-200 bg-zinc-100 p-6 pt-24 transition-[margin] duration-300 ease-in-out dark:border-zinc-800 dark:bg-zinc-900 lg:fixed lg:left-0 lg:ml-0 lg:block lg:h-screen lg:min-h-screen lg:w-96 lg:pt-4 xl:w-80 ${
           showSidebar ? "" : "-ml-96"
         }`}
       >
@@ -85,12 +85,12 @@ const Sidebar: React.FC = () => {
               href="https://github.com/twhitson/treywhitson-com"
               target="_blank"
               rel="noreferrer"
-              className="rounded border-2 border-zinc-300 p-4 dark:border-zinc-700"
+              className="rounded border-2 border-zinc-300 p-4 dark:border-zinc-700 print:hidden"
             >
               <FiGithub />
             </a>
             <button
-              className="rounded border-2 border-zinc-300 p-4 dark:border-zinc-700"
+              className="rounded border-2 border-zinc-300 p-4 dark:border-zinc-700 print:hidden"
               onClick={toggleTheme}
             >
               {theme === "dark" ? <FiMoon /> : <FiSun />}

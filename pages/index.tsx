@@ -16,6 +16,17 @@ const IndexPage: React.FC = () => {
         build that into a team of 15. My skillset is wide and I learn quickly.
         I&apos;m always willing to take on a new challenge!
       </p>
+
+      <div>
+        <a
+          href="https://github.com/twhitson/treywhitson-com"
+          target="_blank"
+          rel="noreferrer"
+          className="print:hidden"
+        >
+          View the source for this site
+        </a>
+      </div>
     </main>
   );
 };

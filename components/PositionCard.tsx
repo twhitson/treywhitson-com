@@ -22,7 +22,7 @@ const PositionCard: React.FC<PositionCardProps> = ({
 
   return (
     <div className="relative rounded-lg bg-white px-5 py-4 ring-1 ring-zinc-900/5 dark:bg-zinc-800">
-      <div className="absolute -left-[23px] top-5 h-3 w-3 rounded-full bg-zinc-300 dark:bg-zinc-700" />
+      <div className="absolute -left-[23px] top-5 h-3 w-3 rounded-full border-4 border-zinc-300 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900" />
       <h4 className="font-semibold">{name}</h4>
       <p className="text-sm text-zinc-600 dark:text-zinc-400">
         {format(new Date(startDate), "LLLL yyyy")}

@@ -16,7 +16,7 @@ const ResumePage: NextPage<ResumePageProps> = ({ data }) => {
       <NextSeo title="Résumé" />
 
       <main>
-        <h1 className="mb-8 text-3xl font-bold">Résumé</h1>
+        <h1 className="mb-8 text-4xl font-bold print:hidden">Résumé</h1>
 
         {data.companies.map((company) => (
           <CompanyCard key={company.id} {...company} />
